@@ -1,3 +1,52 @@
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+from kivymd.app import App
+from kivy.base import Builder
+class m(App):
+    def build(self):
+        return      Builder.load_string("""
+ScreenManager:
+    id:m
+    Screen:
+       
+        name:"a"
+        canvas:
+            Color:
+                rgba:0,0,0.1,1
+            Rectangle:
+                size:self.size
+                pos:self.pos
+        Label:
+            text:"this is screen 1"
+        Button:
+            size_hint:.5,.1
+            pos_hint:{"center_x":.5,"center_y":.1}
+            text:"go to screen 2"
+            on_press:
+                m.current ="b"
+                m.transition.direction = 'left'        
+    Screen:
+        name:"b"  
+        canvas:
+            Color:
+                rgba:0,0,0.1,1
+            Rectangle:
+                size:self.size
+                pos:self.pos
+        Label:
+            text:"this is screen 2"
+        Button:
+            text:"go to screen 2"
+            size_hint:.5,.1
+            pos_hint:{"center_x":.5,"center_y":.1}
+            on_press:
+                m.current ="a"
+                m.transition.direction = 'up'
+        """)
+m().run()
+=======
+>>>>>>> 6a82c7e (Minecraft)
 import sys
 import pygame
 import requests
@@ -441,4 +490,9 @@ def Game():
     pygame.display.update()
     pygame.display.flip()  # Переворачиваем экран
 
+<<<<<<< HEAD
 Game()
+=======
+Game()
+>>>>>>> 4f3e38f (Minecraft2d)
+>>>>>>> 6a82c7e (Minecraft)
