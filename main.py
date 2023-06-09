@@ -249,7 +249,7 @@ def Game():
  # ghost_x = 620
   grass_x=35
   grass_blocks=[]
-  blocks_cnt = 60
+  blocks_cnt = 120
  
   ghost_timer = pygame.USEREVENT + 1
   pygame.time.set_timer(ghost_timer, 3000)
@@ -303,7 +303,7 @@ def Game():
   jump_button.image = pygame.Surface((150, 75))
   jump_button.image.fill('yellow') 
   jump_button.rect = jump_button.image.get_rect()
-  jump_button.rect.center = (500, 700)
+  jump_button.rect.center = (500, 450)
   button_text_jump = button_font.render("Прыжок", True, (0, 0, 0))
   text_rect_jump = button_text_jump.get_rect(center=jump_button.rect.center)
   layout2.add(jump_button)
