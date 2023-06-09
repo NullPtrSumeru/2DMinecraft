@@ -49,7 +49,7 @@ requirements = python3,pillow,pygame,jnius,requests,mcpi,sdl2,sdl2_image,sdl2_mi
 icon.filename = logo.png
 
 # (str) Supported orientation (one of landscape, sensorLandscape, portrait or all)
-orientation = landspace
+orientation = landscape
 
 # (list) List of service to declare
 #services = NAME:ENTRYPOINT_TO_PY,NAME2:ENTRYPOINT2_TO_PY
