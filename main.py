@@ -454,6 +454,4 @@ def Game():
     pygame.display.update()
     pygame.display.flip()  # Переворачиваем экран
 
-Game()�еворачиваем экран
-
 Game()
