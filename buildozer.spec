@@ -36,7 +36,7 @@ version = 0.1
 
 # (list) Application requirements
 # comma separated e.g. requirements = sqlite3,kivy
-requirements = python3,pygame,jnius,requests,mcpi,sdl2,sdl2_image,sdl2_mixer,sdl2_ttf,png,jpeg,charset_normalizer==2.1.1,idna,urllib3
+requirements = python3,pillow,pygame,jnius,requests,mcpi,sdl2,sdl2_image,sdl2_mixer,sdl2_ttf,png,jpeg,charset_normalizer==2.1.1,idna,urllib3
 
 # (str) Custom source folders for requirements
 # Sets custom source for any requirements with recipes
