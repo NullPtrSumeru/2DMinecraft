@@ -31,7 +31,7 @@ jobs:
           pip install requests
           pip install mcpi
           pip install PyOpenGL
-          python main.py
+          python -m py_compile main.py
 
       - name: Build with Buildozer
 
