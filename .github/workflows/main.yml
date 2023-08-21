@@ -27,7 +27,10 @@ jobs:
           pip install -U cython  # You might need other dependencies here
 
           # Compile the code for checking (you might need to modify this command)
-
+          pip install pygame
+          pip install requests
+          pip install mcpi
+          pip install PyOpenGL
           python main.py
 
       - name: Build with Buildozer
