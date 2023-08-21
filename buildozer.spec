@@ -2,19 +2,17 @@
 
 # (str) Title of your application
 title = Minecraft2D
+
 # (str) Package name
-package.name = minecraft
+package.name = minecraft2d
 # (str) Package domain (needed for android/ios packaging)
-
 package.domain = org.nullptr
-
-title = Minecraft2D
 
 # (str) Source code where the main.py live
 source.dir = .
 
 # (list) Source files to include (let empty to include all the files)
-source.include_exts = py,png,jpg,kv,atlas
+source.include_exts = py,png,jpg,kv,atlas,ttf,mp3
 
 # (list) List of inclusions using pattern matching
 #source.include_patterns = assets/*,images/*.png
@@ -38,8 +36,7 @@ version = 0.1
 
 # (list) Application requirements
 # comma separated e.g. requirements = sqlite3,kivy
-
-requirements = python3,kivy,pillow,pytube,certifi,https://github.com/kivymd/KivyMD/archive/refs/heads/master.zip
+requirements = python3,pillow,pygame,jnius,requests,sdl2,sdl2_image,sdl2_mixer,sdl2_ttf,png,jpeg,charset_normalizer==2.1.1,idna,urllib3,hostpython3,openssl,chardet,certifi
 
 # (str) Custom source folders for requirements
 # Sets custom source for any requirements with recipes
@@ -52,7 +49,7 @@ requirements = python3,kivy,pillow,pytube,certifi,https://github.com/kivymd/Kivy
 icon.filename = logo.png
 
 # (str) Supported orientation (one of landscape, sensorLandscape, portrait or all)
-orientation = portrait
+orientation = landscape
 
 # (list) List of service to declare
 #services = NAME:ENTRYPOINT_TO_PY,NAME2:ENTRYPOINT2_TO_PY
@@ -75,7 +72,7 @@ osx.kivy_version = 1.9.1
 #
 
 # (bool) Indicate if the application should be fullscreen or not
-fullscreen = 0
+fullscreen = 1
 
 # (string) Presplash background color (for android toolchain)
 # Supported formats are: #RRGGBB #AARRGGBB or one of the following names:
@@ -95,7 +92,7 @@ fullscreen = 0
 #icon.adaptive_background.filename = %(source.dir)s/data/icon_bg.png
 
 # (list) Permissions
-#android.permissions = INTERNET
+android.permissions = INTERNET, READ_EXTERNAL_STORAGE
 
 # (list) features (adds uses-feature -tags to manifest)
 #android.features = android.hardware.usb.host
@@ -426,4 +423,4 @@ warn_on_root = 1
 #
 #    Then, invoke the command line with the "demo" profile:
 #
-#buildozer --profile demo android debug
+#buildozer --profile demo android debugug
