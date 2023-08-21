@@ -6,8 +6,6 @@ import sys
 from pygame.locals import *
 from io import BytesIO 
 from threading import Timer
-from mcpi.minecraft import *
-from mcpi.event import ChatEvent
 import time 
 from pygame.rect import Rect
 
@@ -91,7 +89,7 @@ class GameObject:
 Loading = True
 gameRunning = False
 musicButtons = True
-musicPlays = False
+#musicPlays = False
 running = True
 mcpiInit = False
 
@@ -162,32 +160,11 @@ class Block(pygame.sprite.Sprite):#Класс Спрайта
         self.rect.x += 5 #Перемещаем спрайт вправо
         if self.rect.left > width: #Если достигается граница
             self.rect.right = 0#Возвращаем к началу
-def MinecraftInit():
-    try:
-        mc = Minecraft.create(address="de2.netly.gg", port=26704) 
-        mc.postToChat("/say test")
-        
-    except ConnectionRefusedError: 
-        print("Не удалось подключиться к серверу Minecraft.") 
-    except Exception as e: 
-        print("Произошла ошибка при подключении к серверу Minecraft:", str(e))
-import pygame
-
-def song(value):
-    global musicPlays
-    if value == 1 and musicPlays == True:
-        pygame.mixer.music.stop()
-    if value == 0 and musicPlays == False:
-        pygame.mixer.init()  # Инициализация звукового модуля Pygame
-        response = requests.get("https://srv5.onlymp3.to/download?file=39fc39122685e647be90cc126ed7cdf1251003003")
-        pygame.mixer.music.load(BytesIO(response.content))  # Загрузка музыкального файла
-        pygame.mixer.music.play()  # Воспроизведение музыки
-
 
 def Game():
   pygame.init()#Инициализируем pygame
   #Устанавливаем размеры окна
-  pygame.mixer.init()#Для звука
+  #pygame.mixer.init()#Для звука
   surface = pygame.display.set_mode((640, 480))
   response = requests.get('https://static-00.iconduck.com/assets.00/minecraft-icon-512x512-8mie91i2.png') 
   ball = pygame.image.load(BytesIO(response.content)) 
@@ -312,7 +289,7 @@ def Game():
   btn.create_menu()
   global mcpiInit
   global musicButtons
-  global musicPlays
+  #global musicPlays
   global Loading
   global gameRunning
   while running:  # Главный цикл игры
@@ -323,14 +300,6 @@ def Game():
             pygame.quit()  # Закрываем программу
         elif event.type == pygame.MOUSEBUTTONDOWN:
             if event.button == 1:  # Левая кнопка мыши
-                    if yes_button.rect.collidepoint(event.pos) and gameRunning == True and musicButtons == True:
-                        song(0)  # Воспроизведение музыки при нажатии на кнопку "Да"
-                        musicPlays = True
-                    elif no_button.rect.collidepoint(event.pos) and gameRunning == True and musicButtons == True:
-                        musicButtons = False
-                        if musicPlays == True:
-                            song(1)
-                            musicPlays = False
                     if left_button.rect.collidepoint(event.pos) and gameRunning == True and player_x > 50:
                         player_x -= player_speed
                     elif right_button.rect.collidepoint(event.pos) and gameRunning == True and player_x < 600:
@@ -373,9 +342,6 @@ def Game():
     elif gameRunning == True:
         surface.blit(background, (bg_x, 0))
         surface.blit(background, (bg_x + width, 0))
-        if mcpiInit == False:
-            MinecraftInit()
-            mcpiInit = True
     elif gameRunning == False:
         surface.fill((0, 0, 0))  # Заполняем экран черным цветом
         Blocks.update()
@@ -384,9 +350,6 @@ def Game():
             o.draw(surface)
     elif gameRunning == True:
         surface.blit(background, (0, 0))
-        if mcpiInit == False:
-            MinecraftInit()
-            mcpiInit = True
     if gameRunning == True and musicButtons == True:
          layout.draw(surface)
          surface.blit(button_text_yes, text_rect_yes.topleft)
