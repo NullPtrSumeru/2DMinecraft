@@ -1,29 +1,14 @@
 [app]
 
 # (str) Title of your application
-<<<<<<< HEAD
 title = Minecraft2D
-=======
-<<<<<<< HEAD
-title = MyApp
->>>>>>> 6a82c7e (Minecraft)
-
 # (str) Package name
 package.name = minecraft
 # (str) Package domain (needed for android/ios packaging)
-<<<<<<< HEAD
-package.domain = org.nullptr
-=======
-package.domain = org.test
-=======
-title = Minecraft2D
 
-# (str) Package name
-package.name = minecraft
-# (str) Package domain (needed for android/ios packaging)
 package.domain = org.nullptr
->>>>>>> 4f3e38f (Minecraft2d)
->>>>>>> 6a82c7e (Minecraft)
+
+title = Minecraft2D
 
 # (str) Source code where the main.py live
 source.dir = .
@@ -53,15 +38,8 @@ version = 0.1
 
 # (list) Application requirements
 # comma separated e.g. requirements = sqlite3,kivy
-<<<<<<< HEAD
-requirements = python3,pygame
-=======
-<<<<<<< HEAD
+
 requirements = python3,kivy,pillow,pytube,certifi,https://github.com/kivymd/KivyMD/archive/refs/heads/master.zip
-=======
-requirements = python3,pygame
->>>>>>> 4f3e38f (Minecraft2d)
->>>>>>> 6a82c7e (Minecraft)
 
 # (str) Custom source folders for requirements
 # Sets custom source for any requirements with recipes
